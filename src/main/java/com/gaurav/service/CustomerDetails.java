@@ -11,7 +11,7 @@ public class CustomerDetails {
 	private boolean result;
 	private CustomerDAOimpl custdao;
 
-	private boolean getCustomerDetails(int CustomerID) throws ServiceException {
+	public boolean getCustomerDetails(int CustomerID) throws ServiceException {
 		custdao = new CustomerDAOimpl();
 		result = false;
 		try {
