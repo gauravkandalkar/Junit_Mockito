@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 import com.gaurav.vo.Customer;
 
-public class CustomerDAOimpl implements CustomerDAO {
+public class CustomerDAOimpl implements ICustomerDAO {
 
 	@Override
 	public Customer Read(int customerID) throws SQLException {

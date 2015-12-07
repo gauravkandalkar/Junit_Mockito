@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 import com.gaurav.vo.Customer;
 
-public interface CustomerDAO {
+public interface ICustomerDAO {
 
 	public Customer Read(int customerID) throws SQLException;
 	public int Insert(Customer cust) throws SQLException;
