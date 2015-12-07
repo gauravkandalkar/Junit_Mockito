@@ -3,16 +3,14 @@ package com.gaurav.service;
 import java.sql.SQLException;
 
 import com.gaurav.dao.CustomerDAOimpl;
+import com.gaurav.dao.ICustomerDAO;
 import com.gaurav.exception.ServiceException;
 import com.gaurav.vo.Customer;
 
 public class CustomerServiceImpl implements ICustomerService {
 
-	private CustomerDAOimpl custdao;
+	private ICustomerDAO custdao;
 
-	/* (non-Javadoc)
-	 * @see com.gaurav.service.ICustomerService#getCustomerDetails(int)
-	 */
 	@Override
 	public boolean getCustomerDetails(int CustomerID) throws ServiceException {
 		boolean result = false;
@@ -29,9 +27,6 @@ public class CustomerServiceImpl implements ICustomerService {
 
 	}
 
-	/* (non-Javadoc)
-	 * @see com.gaurav.service.ICustomerService#createNewCustomer(com.gaurav.vo.Customer)
-	 */
 	@Override
 	public boolean createNewCustomer(Customer cust) throws ServiceException {
 		boolean result = false;
@@ -46,9 +41,6 @@ public class CustomerServiceImpl implements ICustomerService {
 
 	}
 
-	/* (non-Javadoc)
-	 * @see com.gaurav.service.ICustomerService#updateCustomer(int)
-	 */
 	@Override
 	public boolean updateCustomer(int customerID) throws ServiceException {
 		boolean result = false;
@@ -65,9 +57,6 @@ public class CustomerServiceImpl implements ICustomerService {
 
 	}
 
-	/* (non-Javadoc)
-	 * @see com.gaurav.service.ICustomerService#deleteCustomer(int)
-	 */
 	@Override
 	public boolean deleteCustomer(int customerID) throws ServiceException {
 		boolean result = false;
@@ -83,11 +72,11 @@ public class CustomerServiceImpl implements ICustomerService {
 	}
 	
 
-	public CustomerDAOimpl getCustdao() {
+	public ICustomerDAO getCustdao() {
 		return custdao;
 	}
 
-	public void setCustdao(CustomerDAOimpl custdao) {
+	public void setCustdao(ICustomerDAO custdao) {
 		this.custdao = custdao;
 	}
 
