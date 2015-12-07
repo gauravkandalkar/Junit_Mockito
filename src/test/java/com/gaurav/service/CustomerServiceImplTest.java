@@ -41,7 +41,7 @@ public class CustomerServiceImplTest {
 	public void createNewCust_doesNot_create_cust() throws SQLException, ServiceException {
 		when(mockedcustdao.Insert(cust)).thenReturn(0);
 		assertFalse(custser.createNewCustomer(cust));
-		verify(mockedcustdao).Insert(cust);
+		verify(mockedcustdao,times(1)).Insert(cust);
 
 	}
 
@@ -83,7 +83,7 @@ public class CustomerServiceImplTest {
 		assertTrue(custser.updateCustomer(anyInt()));
 		
 		verify(mockedcustdao).Read(anyInt());
-		verify(mockedcustdao).Update(cust);
+		verify(mockedcustdao).Update(any(Customer.class));
 	}
 
 	@Test
