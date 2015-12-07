@@ -19,13 +19,15 @@ public class CustomerDetailsTest {
 
 	@Mock
 	CustomerDAOimpl mockedCustomerDAO;
-	public CustomerDetails custdtl;
+	
+	public CustomerServiceImpl custdtl;
 	
 	@Before
 	public void init()
 	{
-		MockitoAnnotations.initMocks(CustomerDAOimpl.class);
-		custdtl = new CustomerDetails();
+		MockitoAnnotations.initMocks(this);
+		custdtl = new CustomerServiceImpl();
+		custdtl.setCustdao(mockedCustomerDAO);
 	}
 	
 	
